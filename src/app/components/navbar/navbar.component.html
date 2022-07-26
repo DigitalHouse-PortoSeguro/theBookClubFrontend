@@ -33,7 +33,7 @@
                         <a class="nav-link active fw-bold fs-5 text-uppercase" routerLink="/admin" aria-current="page">Admin</a>
                     </li>
                     <div *ngIf="!loggedIn()" class="d-flex me-2 align-items-center">
-                        <img class="me-2 rounded" height="48" id="perfil" src="../../../assets/img/perfil.png" alt="" />
+                        <img class="me-2 rounded" height="48" id="perfil" src="assets/img/perfil.png" alt="" />
                         <div class="d-flex flex-column">
                             <span>Olá, bem vindo(a)!</span>
                             <div class="d-flex">
@@ -44,7 +44,8 @@
                         </div>
                     </div>
                     <div *ngIf="loggedIn()" class="d-flex me-2 align-items-center">
-                        <img class="me-2 rounded" height="48" id="perfil" [src]="getUser().foto" alt="" />
+                        <img class="me-2 rounded" height="48" id="perfil" [src]="getUser().foto" alt="" 
+                            onerror="this.src='assets/img/UserPlaceholder.jpg';"/>
                         <div class="d-flex flex-column">
                             <span>Olá, bem vindo(a) {{getUser().nome}}!</span>
                             <a routerLink="/sair">Sair</a>
